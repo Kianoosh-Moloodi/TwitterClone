@@ -3,7 +3,9 @@ block content
     .loginContainer
         h1 Login
         form(method="post")
-            input(type="text", name="logUsername", placeholder="Username or Email", required="")
+            input(type="text", name="logUsername", placeholder="Username or Email", value=logUsername, required="")
             input(type="password", name="logPassword", placeholder="Password", required="")
             input(type="submit", value="Login")
+            if errorMessage
+                .alert.alert-danger(role='alert') #{errorMessage}
         a(href="/register") Need an account? Register now!

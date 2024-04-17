@@ -11,8 +11,8 @@ block content
             input#passwordConf(type="password", name="passwordConf", placeholder="Confirm Password", required="")
             input(type="submit", value="Register")
             .alert-container
-            .alert.alert-danger(role='alert')
-                .errorMessage #{errorMessage}
+            if errorMessage
+                .alert.alert-danger(role='alert') #{errorMessage}
 
         a(href="/login") Already have an account? Login here!
 
